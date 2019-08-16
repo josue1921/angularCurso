@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col">
+        <input type="text" class="form-control" (keyup)="buscar(termino.value)" placeholder="Buscar artista" #termino/>
+    </div>
+</div>
+
+<app-loading *ngIf="loading" class="m-5"></app-loading>
+
+<div class="alert alert-danger animated fadeIn m-5" *ngIf="error">
+    <h3>Error</h3>
+    <p>
+        {{ messageError }}
+    </p>
+</div>
+
+<div class="card-columns m-5">
+    <!--<app-card [items]="artista" [index]="i" *ngFor="let artista of artistas let i = index"></app-card>-->
+    <app-card *ngIf="!loading" [items]="artistas"></app-card>
+</div>

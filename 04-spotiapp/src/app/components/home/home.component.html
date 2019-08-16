@@ -1,0 +1,17 @@
+<!--<ul>
+    <li *ngFor="let pais of paises">
+        {{ pais.name }} - {{ pais.population | number }}
+    </li>
+</ul>-->
+<app-loading *ngIf="loading" class="m-5"></app-loading>
+<div class="alert alert-danger animated fadeIn" *ngIf="error">
+    <h3>Error</h3>
+    <p>
+        {{ messageError }}
+    </p>
+</div>
+
+<div class="card-columns m-5">
+    <!--<app-card [items]="lists" [index]="i" *ngFor="let lists of nuevasCanciones; let i = index"></app-card>-->
+    <app-card *ngIf="!loading" [items]="nuevasCanciones"></app-card>
+</div>

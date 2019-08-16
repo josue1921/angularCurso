@@ -1,0 +1,17 @@
+<!-- List of Text Items -->
+<ion-item-sliding color="dark" *ngFor="let task of pendientesService.listas | filterList:tab">
+    <ion-item-options side="start">
+        <ion-item-option (click)="editar( task )" color="primary">
+            <ion-icon slot="icon-only" name="create"></ion-icon>
+        </ion-item-option>
+    </ion-item-options>
+    <ion-item detail color="dark" (click)="viewDetail( task )">
+        <ion-label> {{ task.titulo }} </ion-label>
+        <ion-note slot="end" color="tertiary">{{ task.items.length }} items </ion-note>
+    </ion-item>
+    <ion-item-options side="end">
+        <ion-item-option (click)="borrar( task )" color="danger">
+            <ion-icon slot="icon-only" name="close"></ion-icon>
+        </ion-item-option>
+    </ion-item-options>
+</ion-item-sliding>
