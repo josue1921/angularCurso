@@ -1,0 +1,42 @@
+<html ng-app="MyFirstApp">
+  <head>
+    <meta charset="utf-8" />
+    <title>Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="controllers/controllerApi.js"></script>
+  </head>
+  <body ng-controller="FirstController">
+    <div class="content m-5">
+      <div ui-view></div>
+    <!--  Comentario: <input type="text" ng-Model="nuevoComentario.comentario">
+      <br><br>
+      Usuario: <input type="text" ng-Model="nuevoComentario.username">
+      <hr>
+      <button ng-click="agregarComentario()" class="btn  btn-primary">Agregar</button>
+      <hr>
+     <h3>Comentarios</h3>
+     <ul>
+       <li ng-repeat="comentario in comentarios">
+         {{ comentario.comentario}} - <strong>{{comentario.username}}</strong>
+       </li>
+     </ul>
+
+-->
+    <div>
+        <p><h3>Comentarios</h3></p>
+        <p>
+          Tiulo:<br><input type="text" size="70" ng-Model="newPosts.title"/><br>
+          Comentario: <br><textarea rows="6" cols="70" ng-Model="newPosts.body"></textarea>
+          <button ng-click="addPost()" class="btn  btn-primary">Agregar Comentario</button>
+        </p>
+        <p ng-repeat="post in posts">
+          Tiulo:<br><input type="text" size="70" ng-Model="post.title"/><br>
+          Comentario: <br><textarea rows="6" cols="70" ng-Model="post.body"></textarea>
+        </p>
+    </div>
+    </div>
+
+  </body>
+</html>
