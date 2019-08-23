@@ -1,0 +1,54 @@
+<h1>Contacto
+    <small> Nombre del contacto </small>
+</h1>
+<hr>
+<div class="row text-right">
+    <div class="col">
+        <button [routerLink]="['/contacto']" class="btn btn-danger">
+            <i class="fa fa-arrow-left"></i>
+            Regresar
+        </button>
+    </div>
+</div>
+<div class="row animated fadeIn">
+    <div class="col">
+        <form (ngSubmit)="_saveData( f )" #f="ngForm" class="animated fadeIn">
+            <div class="form-group">
+                <label>Firebase ID</label>
+                <input [(ngModel)]="contacto.id" name="id" type="text" class="form-control" disabled="disabled" placeholder="Firebase ID">
+                <small class="form-text text-muted">Este campo es autogenerado</small>
+            </div>
+            <div class="form-group">
+                <label>Nombre (s)</label>
+                <input [(ngModel)]="contacto.nombre" name="name" type="text" class="form-control" placeholder="Nombre persona" required>
+            </div>
+            <div class="form-group">
+                <label>Telefono</label>
+                <input [(ngModel)]="contacto.phone" name="phone" type="number" class="form-control" placeholder="Telefono" required>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input [(ngModel)]="contacto.email" name="email" type="text" class="form-control" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <label>Estatus</label>
+                <br>
+
+                <button *ngIf="contacto.estatus" (click)="contacto.estatus = false" class="btn btn-outline-success w-50" type="button">
+                    <i class="fa fa-smile-wink">Activo</i>
+                </button>
+                <button *ngIf="!contacto.estatus" (click)="contacto.estatus = true" class="btn btn-outline-danger w-50" type="button">
+                    <i class="fa fa-dizzy">Inactivo</i>
+                </button>
+            </div>
+
+            <hr>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary w-25">
+                    <i class="fa fa-save"></i>
+                    Guardar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
